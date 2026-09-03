@@ -1,0 +1,8 @@
+<resources>
+    <!--
+        Como toda la interfaz está hecha con Jetpack Compose (Material 3), este tema
+        de Android "clásico" solo se usa como pantalla de splash/fondo antes de que
+        Compose tome el control. Por eso heredamos de un tema simple del sistema.
+    -->
+    <style name="Theme.Tareas" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
