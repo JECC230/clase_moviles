@@ -1,0 +1,26 @@
+package com.example.tareas.data.local
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+import com.example.tareas.model.Event
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface TareaDao {
+
+    // Lectura reactiva ordenada por fecha de creación descendente
+    @Query("SELECT * FROM tareas ORDER BY createdAt DESC")
+    fun getAll(): Flow<List<Event>>
+
+    @Insert
+    suspend fun insert(event: Event)
+
+    @Update
+    suspend fun update(event: Event)
+
+    @Delete
+    suspend fun delete(event: Event)
+}
